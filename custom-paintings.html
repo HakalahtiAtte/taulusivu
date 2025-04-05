@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tilaustyöt</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <img src="images/logo.png" alt="Logo" class="logo">
+            <h1 class="site-title">Tilaustyöt</h1>
+        </div>
+    </header>
+
+<nav>
+    <a href="index.html">Koti</a>
+    <a href="custom-paintings.html" class="active">Tilaustyöt</a>
+    <a href="about.html">Yhteydenotot</a>
+</nav>
+
+<main>
+    <div>
+        <section class="custom-info">
+            <p >
+                Tuo rakkaat muistosi eloon taideteoksena! 🎨📸<br> 
+            <p>    Tilaa käsinmaalattu taulu suosikkivalokuvastasi ja tee hetkistäsi ikuisia. </p>
+             <p>   Olipa kyseessä lemmikki, rakkaasi tai maisema, muunnamme valokuvasi upeaksi maalaukseksi huolella ja taidolla.</p>
+                <p> Jokainen teos on ainutlaatuinen ja tehty laadukkailla materiaaleilla. Tee kodistasi persoonallisempi ja tilaa oma taulusi jo tänään!</p>
+            </p>
+        </section>
+    </div>
+    <main>
+        <div class="before-after-wrapper">
+          
+          <div class="before-section">
+            <h3>Ennen</h3>
+            <div class="before-images">
+              <img src="images/before1.jpg" alt="Before 1">
+              <img src="images/before2.png" alt="Before 2">
+              <img src="images/before3.jpg" alt="Before 3">
+              <img src="images/before4.PNG" alt="Before 4">
+            </div>
+          </div>
+      
+          <div class="after-section">
+            <h3>Jälkeen</h3>
+            <div class="after-wrapper">
+              <img src="images/taulu4.jpg" alt="After Painting" class="after-image" onclick="openModal('images/taulu4.jpg')">
+            </div>
+          </div>
+      
+        </div>
+      </main>
+</main>
+
+<div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img id="modalImage" src="" alt="Expanded Painting">
+</div>
+
+<footer>
+    <p>&copy; 2025 Taulukauppa</p>
+</footer>
+
+<script>
+    function openModal(imageSrc) {
+        const modal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        modal.style.display = 'flex';
+        modalImage.src = imageSrc;
+    }
+    function closeModal() {
+        document.getElementById('imageModal').style.display = 'none';
+    }
+</script>
+
+</body>
+</html>

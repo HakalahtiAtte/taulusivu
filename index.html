@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taulut</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+   
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="images/logo.png" alt="Logo" class="logo">
+            <h1 class="site-title">Taulut</h1>
+        </div>
+    </header>
+
+<nav>
+    <a href="index.html" class="active" aria-label="Go to Home">Koti</a>
+    <a href="custom-paintings.html" aria-label="Custom Made Paintings">Tilaustyöt</a>
+    <a href="about.html" aria-label="Learn more About">Yhteydenotot</a>
+</nav>
+
+<main>
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="images/taulu1.jpg" alt="Painting 1" loading="lazy" onclick="openModal(this.src)">
+            <div class="description">
+                <h3>Taulun nimi</h3>
+                <p>Tietoa taulusta tänne voi kirjoittaa vaikka kuinka pitkästi jos haluaa</p>
+                <p>Hinta: -€</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/taulu2.jpg" alt="Painting 2" loading="lazy" onclick="openModal(this.src)">
+            <div class="description">
+                <h3>Taulun nimi</h3>
+                <p>Tietoa taulusta tänne voi kirjoittaa vaikka kuinka pitkästi jos haluaa</p>
+                <p>Hinta: -€</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/taulu3.jpg" alt="Painting 3" loading="lazy" onclick="openModal(this.src)">
+            <div class="description">
+                <h3>Taulun nimi</h3>
+                <p>Tietoa taulusta tänne voi kirjoittaa vaikka kuinka pitkästi jos haluaa</p>
+                <p>Hinta: -€</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/taulu4.jpg" alt="Painting 4" loading="lazy" onclick="openModal(this.src)">
+            <div class="description">
+                <h3>Taulun nimi</h3>
+                <p>Tietoa taulusta tänne voi kirjoittaa vaikka kuinka pitkästi jos haluaa</p>
+                <p>Hinta: -€</p>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="images/taulu4.jpg" alt="Painting 4" loading="lazy" onclick="openModal(this.src)">
+            <div class="description">
+                <h3>Taulun nimi</h3>
+                <p>Tietoa taulusta tänne voi kirjoittaa vaikka kuinka pitkästi jos haluaa</p>
+                <p>Hinta: -€</p>
+            </div>
+        </div>
+    </div>
+</main>
+
+<div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img id="modalImage" src="" alt="Expanded Painting" onclick="event.stopPropagation()">
+</div>
+
+<section class="sub-header">
+    <h2>Valokuvista kankaalle</h2>
+</section>
+
+
+<main>
+    <div class="before-after-wrapper">
+      
+      <div class="before-section">
+        <h3>Ennen</h3>
+        <div class="before-images">
+          <img src="images/before1.jpg" alt="Before 1">
+          <img src="images/before2.png" alt="Before 2">
+          <img src="images/before3.jpg" alt="Before 3">
+          <img src="images/before4.PNG" alt="Before 4">
+        </div>
+      </div>
+  
+      <div class="after-section">
+        <h3>Jälkeen</h3>
+        <div class="after-wrapper">
+          <img src="images/taulu4.jpg" alt="After Painting" class="after-image" onclick="openModal('images/taulu4.jpg')">
+        </div>
+      </div>
+  
+    </div>
+  </main>
+
+<div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img id="modalImage" src="" alt="Expanded Painting">
+</div>
+<div>
+    <section class="custom-info">
+        <p >
+            Tuo rakkaat muistosi eloon taideteoksena! 🎨📸<br> 
+        <p>    Tilaa käsinmaalattu taulu suosikkivalokuvastasi ja tee hetkistäsi ikuisia. </p>
+         <p>   Olipa kyseessä lemmikki, rakkaasi tai maisema, muunnamme valokuvasi upeaksi maalaukseksi huolella ja taidolla.</p>
+            <p> Jokainen teos on ainutlaatuinen ja tehty laadukkailla materiaaleilla. Tee kodistasi persoonallisempi ja tilaa oma taulusi jo tänään!</p>
+        </p>
+    </section>
+</div>
+<main>
+    <section class="about-section">
+        <img src="images/janne.jpg" alt="Portrait of John Doe">
+        <h2>Janne Hakalahti</h2>
+        <p>Janne on intohimoinen lintukuvaaja, joka viettää aikansa luonnossa ikuistaen lintujen kauneutta kamerallaan. </p>
+        <p>Vapaa-ajallaan hän inspiroituu kuvistaan ja muuttaa ne eläviksi maalauksiksi, joissa yhdistyvät luonnon värit ja herkät yksityiskohdat.</p> 
+        <p> Jannen töissä näkyy hänen syvä yhteytensä luontoon ja rakkaus lintuihin."</p>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 Taulukauppa.</p>
+</footer>
+<div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <img id="modalImage" src="" alt="Expanded Painting">
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
