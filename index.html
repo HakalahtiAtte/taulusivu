@@ -1,137 +1,350 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Taulut</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-   
-</head>
-<body>
-    <header>
-        <div class="header-content">
-          <img src="images/logo.png" alt="Logo" class="logo" />
-          <h1>Taulut</h1>
-        </div>
-      </header>
+/* styles.css */
 
-<nav>
-    <a href="index.html" class="active" aria-label="Go to Home">Koti</a>
-    <a href="custom-paintings.html" aria-label="Custom Made Paintings">Tilaustyöt</a>
-    <a href="about.html" aria-label="Learn more About">Yhteydenotot</a>
-</nav>
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/background.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+header {
+  background-color: #111;
+  color: white;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px 0;
+}
 
-<main>
-    <div class="gallery">
-        <div class="gallery-item">
-            <img src="images/taulu1.jpg" alt="Painting 1" loading="lazy" onclick="openModal(this.src)">
-            <div class="description">
-                <h3>Taulun nimi</h3>
-                <p>Tietoa taulusta tänne voi kirjoittaa vaikka kuinka pitkästi jos haluaa</p>
-                <p>Hinta: -€</p>
-            </div>
-        </div>
-        <div class="gallery-item">
-            <img src="images/taulu2.jpg" alt="Painting 2" loading="lazy" onclick="openModal(this.src)">
-            <div class="description">
-                <h3>Taulun nimi</h3>
-                <p>Tietoa taulusta tänne voi kirjoittaa vaikka kuinka pitkästi jos haluaa</p>
-                <p>Hinta: -€</p>
-            </div>
-        </div>
-        <div class="gallery-item">
-            <img src="images/taulu3.jpg" alt="Painting 3" loading="lazy" onclick="openModal(this.src)">
-            <div class="description">
-                <h3>Taulun nimi</h3>
-                <p>Tietoa taulusta tänne voi kirjoittaa vaikka kuinka pitkästi jos haluaa</p>
-                <p>Hinta: -€</p>
-            </div>
-        </div>
-        <div class="gallery-item">
-            <img src="images/taulu4.jpg" alt="Painting 4" loading="lazy" onclick="openModal(this.src)">
-            <div class="description">
-                <h3>Taulun nimi</h3>
-                <p>Tietoa taulusta tänne voi kirjoittaa vaikka kuinka pitkästi jos haluaa</p>
-                <p>Hinta: -€</p>
-            </div>
-        </div>
-        <div class="gallery-item">
-            <img src="images/taulu4.jpg" alt="Painting 4" loading="lazy" onclick="openModal(this.src)">
-            <div class="description">
-                <h3>Taulun nimi</h3>
-                <p>Tietoa taulusta tänne voi kirjoittaa vaikka kuinka pitkästi jos haluaa</p>
-                <p>Hinta: -€</p>
-            </div>
-        </div>
-    </div>
-</main>
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
 
-<div id="imageModal" class="modal" onclick="closeModal()">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <img id="modalImage" src="" alt="Expanded Painting" onclick="event.stopPropagation()">
-</div>
+.logo {
+  width: 150px;
+  height: auto;
+}
 
-<section class="sub-header">
-    <h2>Valokuvista kankaalle</h2>
-</section>
+h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.sub-header {
+    width: 100vw; 
+    background-color: #111;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 1rem;
+    border-top: 1px solid #444;
+    border-bottom: 1px solid #444;
+    margin: 0; 
+    position: relative;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%); 
+}
 
 
-<main>
-    <div class="before-after-wrapper">
-      
-      <div class="before-section">
-        <h3>Ennen</h3>
-        <div class="before-images">
-          <img src="images/before1.jpg" alt="Before 1">
-          <img src="images/before2.png" alt="Before 2">
-          <img src="images/before3.jpg" alt="Before 3">
-          <img src="images/before4.png" alt="Before 4">
-        </div>
-      </div>
+.site-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    font-size: 2rem;
+    white-space: nowrap;
+}
+nav {
+    background-color: rgba(34, 34, 34, 0.8);
+    color: white;
+    text-align: center;
+    padding: 0.5rem 0;
+    width: 100%;
+}
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+nav a:hover, nav a.active {
+    text-decoration: underline;
+    font-weight: bold;
+}
+.contact{
+    font-family: 'Poppins', sans-serif;
+    background-color: #111;
+    color: white;
+    padding: 1rem;
+    width: 100%;
+    border-radius: 10px;
+    
+}
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  padding: 16px;
+  justify-content: center;
+  max-width: 1200px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.gallery-item {
+    background-color: rgba(34, 34, 34, 0.9);
+    border: 1px solid #444;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    text-align: center;
+    margin: 0 auto;
+}
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+.gallery-item img:hover {
+    transform: scale(1.05) rotate(-2deg);
+}
+.gallery-item .description {
+    padding: 8px 16px;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+.modal img {
+    width: 50%;
+    height: auto;
+}
+.modal.show {
+    display: flex;
+}
+.close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.before-after-wrapper {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap; 
+    padding: 20px;
+  }
   
-      <div class="after-section">
-        <h3>Jälkeen</h3>
-        <div class="after-wrapper">
-          <img src="images/taulu4.jpg" alt="After Painting" class="after-image" onclick="openModal('images/taulu4.jpg')">
-        </div>
-      </div>
+  .before-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    max-width: 620px;
+  }
   
-    </div>
-  </main>
+  .before-images img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  .after-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .after-image {
+    width: 100%;
+    max-width: 810px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .before-section,
+.after-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-<div id="imageModal" class="modal" onclick="closeModal()">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <img id="modalImage" src="" alt="Expanded Painting">
-</div>
-<div>
-    <section class="custom-info">
-        <p >
-            Tuo rakkaat muistosi eloon taideteoksena! 🎨📸<br> 
-        <p>    Tilaa käsinmaalattu taulu suosikkivalokuvastasi ja tee hetkistäsi ikuisia. </p>
-         <p>   Olipa kyseessä lemmikki, rakkaasi tai maisema, muunnamme valokuvasi upeaksi maalaukseksi huolella ja taidolla.</p>
-            <p> Jokainen teos on ainutlaatuinen ja tehty laadukkailla materiaaleilla. Tee kodistasi persoonallisempi ja tilaa oma taulusi jo tänään!</p>
-        </p>
-    </section>
-</div>
-<main>
-    <section class="about-section">
-        <img src="images/janne.jpg" alt="Portrait">
-        <h2>Janne Hakalahti</h2>
-        <p>Janne on intohimoinen lintukuvaaja, joka viettää aikansa luonnossa ikuistaen lintujen kauneutta kamerallaan. </p>
-        <p>Vapaa-ajallaan hän inspiroituu kuvistaan ja muuttaa ne eläviksi maalauksiksi, joissa yhdistyvät luonnon värit ja herkät yksityiskohdat.</p> 
-        <p> Jannen töissä näkyy hänen syvä yhteytensä luontoon ja rakkaus lintuihin."</p>
-    </section>
-</main>
+.before-section h3,
+.after-section h3 {
+  color: #fff;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 2px solid #555;
+  padding-bottom: 5px;
+}
 
-<footer>
-    <p>&copy; 2025 Taulukauppa.</p>
-</footer>
-<div id="imageModal" class="modal" onclick="closeModal()">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <img id="modalImage" src="" alt="Expanded Painting">
-</div>
-
-<script src="script.js"></script>
-</body>
-</html>
+.about-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 16px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid #444;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+.about-section img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 16px;
+    border: 4px solid #444;
+    transition: transform 0.3s ease-in-out;
+}
+.about-section img:hover {
+    transform: scale(1.05);
+}
+.custom-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 16px;
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border: 1px solid #444;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+}
+main p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+@media (min-width: 1025px) {
+  .gallery-item:nth-child(2n) {
+    grid-column: span 2;
+  }
+}
+@media (max-width: 1024px) and (min-width: 601px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 12px;
+    justify-content: center;
+  }
+}
+@media (max-width: 768px) {
+    body {
+      padding: 10px;
+    }
+  
+    header {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 10px 0;
+    }
+    .header-content {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .logo {
+      width: 120px;
+    }
+  
+    h1 {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  
+  
+    nav {
+      flex-direction: column;
+      padding: 1rem 0;
+    }
+  
+    nav a {
+      display: block;
+      margin: 10px 0;
+      font-size: 1.1rem;
+    }
+  
+    .gallery {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+  
+    .before-images {
+      grid-template-columns: 1fr;
+    }
+  
+    .before-images img,
+.after-image,
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    border-radius: 6px;
+}
+  
+    .gallery-item {
+      max-width: 100%;
+    }
+  
+    .about-section img {
+      width: 150px;
+      height: 150px;
+    }
+  
+    main p {
+      font-size: 1rem;
+      padding: 0 10px;
+    }
+  
+    .modal img {
+      width: 90%;
+      height: auto;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .gallery {
+      grid-template-columns: 1fr;
+      padding: 8px;
+    }
+  
+    .gallery-item {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+  
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+    }
+  }
