@@ -1,15 +1,22 @@
 /* styles.css */
-
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/background.jpg") no-repeat center center fixed;
-    background-size: cover;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/background.jpg") no-repeat center center fixed;
+  background-size: cover;
+  background-color: #111;
+  color: #fff;
+}
+  body.loaded {
+  opacity: 1;
 }
 header {
   background-color: #111;
@@ -87,17 +94,30 @@ nav a:hover, nav a.active {
     max-width: 600px; 
     margin: 0 auto;  
     border-radius: 10px;
-    box-sizing: border-box;   
+    box-sizing: border-box; 
+    margin-top: 2rem;
 }
+
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 16px;
-  padding: 16px;
-  justify-content: center;
-  max-width: 1200px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  padding: 32px 16px;
+  justify-items: center;
+  align-items: start;
   width: 100%;
   box-sizing: border-box;
+  margin: 0 auto; 
+  
+  
+}
+.gallery img {
+  width: 100%;
+  height: 250px;
+  cursor: pointer;
+  display: block;
+  object-fit: cover;
+  
 }
 .gallery-item {
     background-color: rgba(34, 34, 34, 0.9);
@@ -106,10 +126,12 @@ nav a:hover, nav a.active {
     overflow: hidden;
     width: 100%;
     max-width: 300px;
+    min-height: 380px;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
     text-align: center;
-    margin: 0 auto;
+    
 }
+
 .gallery-item img {
     width: 100%;
     height: 200px;
@@ -117,6 +139,7 @@ nav a:hover, nav a.active {
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
 }
+
 .gallery-item img:hover {
     transform: scale(1.05) rotate(-2deg);
 }
@@ -229,6 +252,7 @@ nav a:hover, nav a.active {
     transform: scale(1.05);
 }
 .custom-info {
+    margin-top: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -244,11 +268,68 @@ main p {
     font-size: 1rem;
     line-height: 1.6;
 }
-@media (min-width: 1025px) {
-  .gallery-item:nth-child(2n) {
-    grid-column: span 2;
-  }
+.birdhouse-section {
+  font-family: 'Poppins', sans-serif;
+  margin-top: 2rem;
+  padding: 2rem 1rem;
+  background-color: #1a1a1a;
+  color: white;
+  text-align: center;
 }
+
+.birdhouse-banner img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.birdhouse-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  max-width: 1000px;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+.birdhouse-gallery img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.birdhouse-gallery img:hover {
+  transform: scale(1.05) rotate(-1deg);
+}
+
+.birdhouse-description {
+  font-size: 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.8);
+  text-align: center;
+  padding: 1.5rem 2rem; /* Added vertical and horizontal padding */
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+.birdhouse-description h2 {
+  margin-bottom: 1rem;
+}
+footer {
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0;
+  color: white;
+  box-sizing: border-box;
+}
+
 @media (max-width: 1024px) and (min-width: 601px) {
   .gallery {
     grid-template-columns: repeat(2, 1fr);
@@ -332,6 +413,15 @@ main p {
       width: 90%;
       height: auto;
     }
+    .birdhouse-gallery {
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 0.75rem;
+    }
+  
+    .birdhouse-description {
+      padding: 1.5rem 1rem;
+      justify-content: center;
+    }
   }
   
   @media (max-width: 600px) {
@@ -348,5 +438,45 @@ main p {
     .gallery-item img {
       width: 100%;
       height: auto;
+    }
+  }
+  @media (max-width: 480px) {
+    .before-after-wrapper {
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+    }
+  
+    .birdhouse-gallery {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+    }
+  
+    .birdhouse-gallery img {
+      height: auto;
+      max-height: 250px;
+    }
+  
+    .birdhouse-description {
+      padding: 1rem;
+    }
+  
+    .header-content,
+    nav {
+      flex-direction: column;
+    }
+    .birdhouse-section {
+      padding: 1rem 0.5rem;
+    }
+  
+    .birdhouse-gallery {
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 0.5rem;
+      padding: 0.5rem;
+    }
+  
+    .birdhouse-gallery img {
+      height: auto;
+      max-height: 220px;
     }
   }
