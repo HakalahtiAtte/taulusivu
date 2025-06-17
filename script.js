@@ -28,33 +28,6 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Swipe functionality
-  let touchStartX = 0;
-  let touchEndX = 0;
-
-  modalImage.addEventListener("touchstart", (e) => {
-    touchStartX = e.changedTouches[0].screenX;
-  });
-
-  modalImage.addEventListener("touchend", (e) => {
-    touchEndX = e.changedTouches[0].screenX;
-    handleSwipe();
-  });
-
-  function handleSwipe() {
-    const swipeDistance = touchEndX - touchStartX;
-    if (Math.abs(swipeDistance) < 50) return; // Too short to count
-
-    if (swipeDistance < 0) {
-      // Swipe left = next
-      currentImageIndex = (currentImageIndex + 1) % allGalleryImages.length;
-    } else {
-      // Swipe right = previous
-      currentImageIndex = (currentImageIndex - 1 + allGalleryImages.length) % allGalleryImages.length;
-    }
-
-    modalImage.src = allGalleryImages[currentImageIndex].src;
-  }
 
   // Modal closing
   modal.addEventListener('click', closeModal);
@@ -65,7 +38,7 @@ window.addEventListener("DOMContentLoaded", () => {
     if (e.key === 'Escape') closeModal();
   });
 
-  // Page transition effect
+  // Page transition
   document.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", e => {
       const href = link.getAttribute("href");
