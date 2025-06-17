@@ -3,6 +3,13 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  
+  #modalImage {
+  touch-action: auto;
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+}
 }
 body {
   opacity: 0;
