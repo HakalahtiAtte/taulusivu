@@ -341,6 +341,36 @@ footer {
   box-sizing: border-box;
 }
 
+/* Sold */
+.gallery-item.sold {
+  position: relative;
+  overflow: hidden;
+  opacity: 0.8;
+}
+
+.gallery-item.sold::before {
+  content: "Myyty";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  z-index: 2;
+  /* pointer-events: none; */
+}
+
+.gallery-item.sold img {
+  filter: grayscale(100%) brightness(70%);
+ /* pointer-events: none; */
+}
+
+
 @media (max-width: 1024px) and (min-width: 601px) {
   .gallery {
     grid-template-columns: repeat(2, 1fr);
@@ -560,3 +590,4 @@ footer {
     }
 
   }
+
