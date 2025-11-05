@@ -20,7 +20,7 @@
 <nav>
      <a href="./" aria-label="Go to Home">Koti</a>
         <a href="./custom-paintings" class="active" aria-label="Custom Made Paintings">Tilaustyöt</a>
-        <a href="./birdhouses" aria-label="Birdhouses">Linnunpöntöt</a>
+       <!-- <a href="./birdhouses" aria-label="Birdhouses">Linnunpöntöt</a> -->
         <a href="./about" aria-label="Contact">Yhteydenotot</a>
 </nav>
 
@@ -35,20 +35,18 @@
     <main>
         <div class="before-after-wrapper">
           
-          <div class="before-section">
-            <h3>Ennen</h3>
-            <div class="before-images">
-              <img src="images/before1.jpg" alt="Before 1">
-              <img src="images/before2.png" alt="Before 2">
-              <img src="images/before3.jpg" alt="Before 3">
-              <img src="images/before4.png" alt="Before 4">
+          <div class="after-section">
+            <h3>Esimerkkikuva</h3>
+            <div class="after-wrapper">
+              <img src="images/before11.jpg" alt="After Painting" class="after-image" onclick="openModal('images/after22.jpg')">
+             
             </div>
           </div>
       
           <div class="after-section">
-            <h3>Jälkeen</h3>
+            <h3>Taulu</h3>
             <div class="after-wrapper">
-              <img src="images/taulu4.jpg" alt="After Painting" class="after-image" onclick="openModal('images/taulu4.jpg')">
+              <img src="images/after22.jpg" alt="After Painting" class="after-image" onclick="openModal('images/after22.jpg')">
             </div>
           </div>
       
@@ -67,3 +65,4 @@
 <script src="script.js"></script>
 </body>
 </html>
+
